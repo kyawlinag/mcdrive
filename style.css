@@ -1,0 +1,314 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+/* ====Colurs ======= */
+:root{
+    --body-color:#e4edff;
+    --nav-color:#d0daef;
+    --side-nav:#d0daef;
+    --text-color:#2d2e2d;
+    --secont-bg:#c9dfdf;
+}
+
+body{
+    height:100vh;
+    background-color:var(--body-color);
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    height:70px;
+    width:100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+nav .nav-bar{
+    position:relative;
+    height:100%;
+    max-width:1200px;
+    width:100%;
+    background-color:var(--nav-color);
+    margin:0 auto;
+    padding:0 30px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+nav .nav-bar .sidebarOpen{
+    color:var(--text-color);
+    font-size:25px;
+    padding:5px;
+    cursor: pointer;
+    display: none;
+}
+nav .nav-bar .logo a,
+nav .nav-bar .main-logo a{
+    font-size:25px;
+    font-weight: bold;
+    color:var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display:flex;
+    align-items:center;
+}
+.nav-bar .nav-links li{
+    margin:0 5px;
+    list-style:none;
+}
+.nav-links li a{
+    position:relative;
+    font-size:17px;
+    font-weight:400;
+    color:var(--text-color);
+    text-decoration:none;
+}
+.nav-links li a::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(50%);
+    height: 6px;
+    width:6px;
+    border-radius:50%;
+    background-color: var(--text-color);
+    opacity:0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity:1;
+}
+
+.main-logo,.logo{
+    padding: 0;
+    display: flex;
+    
+}
+.main-logo a,.logo a{
+    line-height: 60px;
+}
+.logoImg{
+    width: 70px;
+    height: 50px;
+    float:left;
+}
+
+/* container */
+
+.container{
+    width: 100%;
+    height:100vh;
+    margin-top:70px;
+    padding:0 30px;
+    
+}
+.container .first-part,
+.container .second-part{
+    width:100%;
+    max-width:1200px;
+    height: 60vh;
+    margin: 0 auto;
+    padding:30px 0;
+}
+.first-part h2,
+.second-part h2{
+    width:100%;
+    margin-top:40px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 35px;
+    
+}
+.first-part .contant{
+    width:100%;
+    height: 35vh;
+    display: flex;
+}
+.contant .contant-text,
+.contant .contant-img
+{
+    width:50%;
+    height: 35vh;
+    color:var(--text-color);
+    text-align: center;
+}
+.contant .contant-text{
+    padding-top:70px;
+
+}
+.contant-text h4{
+    font-size: 25px;
+}
+.contant-text p{
+    font-size: 20px;
+}
+.imgOne{
+    width:400px;
+    height: 450px;
+    object-fit: cover;
+    
+}
+.second-part::before{
+    content:'';
+    background: rgb(243,246,246);
+    background: linear-gradient(90deg, rgba(243,246,246,1) 0%, rgba(9,9,9,1) 47%, rgba(247,249,250,1) 100%);
+    height:2px;
+    width:35%;
+    margin-top:30px;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    transform: translateY(10px);
+    margin-bottom: 5vh;
+}
+.second-part h2{
+    margin-bottom: 5vh;
+}
+.second-part .show-service{
+    width:100%;
+    height: 60vh;
+    display: flex;
+}
+.show-service .show-one,
+.show-service .show-two,
+.show-service .show-three,
+.show-service .show-four{
+    width:25%;
+    height: 100%;
+    padding-top: 30px;
+}
+.show-one .icon-file,
+.show-two .icon-file,
+.show-three .icon-file,
+.show-four .icon-file{
+    width: 40%;
+    height: 10vh;
+    margin: 0 auto;
+}
+.show-one .icon-text,
+.show-two .icon-text,
+.show-three .icon-text,
+.show-four .icon-text{
+    margin-top:30px;
+    text-align: center;
+}
+/* ======================== */
+/* responsive part */
+/* ========================== */
+@media (max-width: 790px)
+{
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .main-logo{
+        margin-left: 7%;
+        position: absolute;
+    }
+    .menu{
+        position:fixed;
+        height:100%;
+        width: 320px;
+        left:-100%;
+        top:0;
+        padding:20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition:all 0.4s ease;
+    }
+    nav.active .menu{
+        left:0%;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .sidebarClose{
+        color:var(--text-color);
+        font-size: 24px;
+        cursor:pointer;
+    }
+    
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top:30px;
+    }
+    .nav-links li a{
+        display: block;
+        margin-top:20px;
+    }
+    /* container */
+    .container .first-part{
+        height: 70vh;
+    }
+    .first-part .contant{
+        width: 100%;
+        height: 70vh;
+        flex-direction: column;
+    }
+    .contant .contant-text,
+    .contant .contant-img
+    {
+        width:100%;
+        height: 50vh;
+        display: block;
+        border: 1px solid red;
+    }
+    .container .second-part{
+        width: 100%;
+        height: 70vh;
+        margin-top: 100px;
+        flex-direction: column;
+    }
+    .second-part::before{
+        content:'';
+        background: rgb(243,246,246);
+        background: linear-gradient(90deg, rgba(243,246,246,1) 0%, rgba(9,9,9,1) 47%, rgba(247,249,250,1) 100%);
+        height:2px;
+        width:35%;
+        margin-top:50vh;
+        margin-left:auto;
+        margin-right:auto;
+        display: block;
+        transform: translateY(10px);
+    }
+    .second-part .show-service{
+        width:100%;
+        height: auto;
+        flex-direction: column;
+    }
+    .show-service .show-one,
+    .show-service .show-two,
+    .show-service .show-three,
+    .show-service .show-four{
+        width: 100%;
+        height: 100%;
+        border: 1px solid red;
+        margin-top: 20px;
+    }
+    .show-one .icon-file,
+    .show-two .icon-file,
+    .show-three .icon-file,
+    .show-four .icon-file{
+        width: 30%;
+        height: 8vh;
+        margin: 0 auto;
+    }
+}
